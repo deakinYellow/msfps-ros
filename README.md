@@ -10,8 +10,7 @@ A Mutil Sensors Fusion Position System
 ## 2.安装
 
 ### 1.1 ROS
-  基于ros-melodic版本开发，需要先安装ros
-
+  基于ros-melodic版本开发，需要先安装ros,并创建ros工作空间进行编译
 
 
 
