@@ -1,0 +1,16 @@
+# %YAML:1.0
+# WARNING: AVOID any TAB in this file, otherwise there will be error.
+# parameters for vi_sensor
+# last edit date: 2022/06/21
+
+dev_id: /dev/uwb
+dev_baudrate: 115200
+
+is_pub_distance: true
+is_pub_position: true
+
+tag_distance_topic: /qyxk_uwb/tag_distance
+tag_position_topic: /qyxk_uwb/tag_position
+
+#tag_id: 51391
+tag_id: 51387

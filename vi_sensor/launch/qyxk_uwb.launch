@@ -1,0 +1,5 @@
+<launch>
+<node pkg="vi_sensor" type="uwb" name="uwb" output="screen">
+    <rosparam command="load" file="$(find vi_sensor)/launch/uwb.yaml" ns="" />
+</node>
+</launch>

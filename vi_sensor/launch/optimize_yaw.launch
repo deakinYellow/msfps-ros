@@ -1,0 +1,5 @@
+<launch>
+<node pkg="vi_sensor" type="optimize_yaw" name="optimize_yaw" output="screen">
+    <rosparam command="load" file="$(find vi_sensor)/launch/optimize_yaw.yaml" ns="" />
+</node>
+</launch>

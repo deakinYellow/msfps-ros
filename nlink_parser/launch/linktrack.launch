@@ -1,0 +1,12 @@
+<launch>
+    <!-- Make sure that name and args are the same! -->
+    <node pkg="nlink_parser" type="linktrack" name="linktrack_00" args="linktrack_00" output="screen">
+        <param name="port_name" value="/dev/ttyUSB2" />
+        <param name="baud_rate" value="921600" />
+    </node>
+    <!-- Make sure that name and args are the same! -->
+    <node pkg="nlink_parser" type="linktrack" name="linktrack_01" args="linktrack_01" output="screen">
+        <param name="port_name" value="/dev/ttyUSB3" />
+        <param name="baud_rate" value="921600" />
+    </node>
+</launch>

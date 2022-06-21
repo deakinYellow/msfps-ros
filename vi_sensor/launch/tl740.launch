@@ -1,0 +1,5 @@
+<launch>
+<node pkg="vi_sensor" type="tl740" name="tl740" output="screen">
+    <rosparam command="load" file="$(find vi_sensor)/launch/tl740.yaml" ns="" />
+</node>
+</launch>

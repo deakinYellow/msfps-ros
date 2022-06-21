@@ -1,0 +1,5 @@
+<launch>
+<node pkg="vi_sensor" type="lpms_imu" name="imu" output="screen">
+    <rosparam command="load" file="$(find vi_sensor)/launch/lpms_ME1.yaml" ns="" />
+</node>
+</launch>

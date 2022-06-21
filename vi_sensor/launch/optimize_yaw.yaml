@@ -1,0 +1,19 @@
+# %YAML:1.0
+# WARNING: AVOID any TAB in this file, otherwise there will be error.
+# parameters for vi_sensor
+# last edit date: 2020/03/27
+
+#dev_type: "LinuxDevice"
+#dev_id: "IG1232000470"
+#gravity: 9.7925  #深圳重力加速度
+
+is_pub: true
+
+IG1_yaw_raw_sub_topic: /lpms_IG1/yaw_raw
+WLR_yaw_raw_sub_topic: /api/wlr720_yaw_raw
+
+IG1_yaw_optimize_pub_topic: /optimize_yaw/IG1_yaw
+WLR_yaw_optimize_pub_topic: /optimize_yaw/WLR_yaw
+
+
+

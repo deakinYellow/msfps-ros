@@ -1,0 +1,6 @@
+<launch>
+    <!-- Make sure that name and args are the same! -->
+    <node pkg="uifp" type="radar" name="radar" args="radar" output="screen">
+    <rosparam command="load" file="$(find uifp)/launch/radar.yaml" ns="" />
+    </node>
+</launch>

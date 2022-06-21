@@ -1,0 +1,10 @@
+# %YAML:1.0
+# Waring: AVOID any TAB in this file, otherwise there will be error.
+# parameters for uifp
+# last edit date: 2020/12/21
+
+pose_data_sub_topic: "/fork_pose2d"
+
+visual_tracking_pub_topic: "radar_position_marker"
+markers_max: 1000
+

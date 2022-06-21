@@ -1,0 +1,25 @@
+# %YAML:1.0
+# Waring: AVOID any TAB in this file, otherwise there will be error.
+# parameters for vi_sensor
+# last edit date: 2020/12/17
+
+gravity: 9.7925  #深圳重力加速度值 m/s^2
+
+##---------IMU 01------------------
+dev_type: "LinuxDevice"   # OpenZen Linux 设备名称,固定
+dev_id: "IG1232000470"    #USB设备 SerialNumber, Linux下可通过dmesg查看
+#dev_id: "IG12329004D004A"
+
+samplingrate: 50   ##IMU采样频率
+
+#陀螺仪自动校准开关（本质为静止判断算法，设置阈值，小于一定值判断为静止,开启后转动慢会出现较大误差)
+#gyr_auto_calibration: true
+gyr_auto_calibration: false
+
+
+##发布主题，使用相对路径
+imu_data_pub_topic: imu_data_raw
+yaw_pub_topic: yaw_raw
+
+is_pub: true
+

@@ -1,0 +1,8 @@
+# %YAML:1.0
+# WARNING: AVOID any TAB in this file, otherwise there will be error.
+# parameters for vi_sensor
+# last edit date: 2020/03/27
+
+#uwb_tag_distance_topic: /qyxk_uwb/tag_distance
+#uwb_tag_position_topic: /qyxk_uwb/tag_position
+

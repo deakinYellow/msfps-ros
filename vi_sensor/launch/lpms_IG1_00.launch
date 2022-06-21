@@ -1,0 +1,6 @@
+<launch>
+    <!-- Make sure that name and args are the same! -->
+    <node pkg="vi_sensor" type="lpms_IG1" name="lpms_IG1_00" args="lpms_IG1_00" output="screen">
+    <rosparam command="load" file="$(find vi_sensor)/launch/lpms_IG1_00.yaml" ns="" />
+    </node>
+</launch>

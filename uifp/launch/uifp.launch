@@ -1,0 +1,6 @@
+<launch>
+    <!-- Make sure that name and args are the same! -->
+    <node pkg="uifp" type="uifp" name="uifp_00" args="uifp_00" output="screen">
+    <rosparam command="load" file="$(find uifp)/launch/uifp_00.yaml" ns="" />
+    </node>
+</launch>

@@ -1,0 +1,13 @@
+# %YAML:1.0
+# WARNING: AVOID any TAB in this file, otherwise there will be error.
+# parameters for vi_sensor
+# last edit date: 2020/03/27
+
+dev_id: /dev/ttyUSB0
+dev_baudrate: 115200
+
+is_pub: true
+
+imu_data_pub_topic: /tl740/imu_data_raw
+
+

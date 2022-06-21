@@ -1,0 +1,87 @@
+# %YAML:1.0
+# Waring: AVOID any TAB in this file, otherwise there will be error.
+# parameters for uifp
+# last edit date: 2020/12/21
+tag00_sub_topic: "/linktrack_00/nlink_linktrack_nodeframe2"
+tag01_sub_topic: "/linktrack_01/nlink_linktrack_nodeframe2"
+
+imu00_sub_topic: "/lpms_IG1_00/imu_data_raw"
+imu01_sub_topic: "/lpms_IG1_01/imu_data_raw"
+
+##发布主题，使用相对路径
+is_pub: true
+
+##-----------------------UIFP------------------
+
+##------------Anchor Map---------------
+anchor_list:  [ 0, 1, 2, 3 ]
+anchor_00000: [ 9.931, 5.694, 2.917 ]
+anchor_00001: [ 8.772, 1.566, 2.906 ]
+anchor_00002: [ 2.682, 1.023, 2.913 ]
+anchor_00003: [ 2.607, 5.914, 2.940 ]
+
+#anchor_00000: [0.000, 0.000, 3.0 ]
+#anchor_00001: [ 0.919, 4.084, 3.0 ]
+#anchor_00002: [ 6.991, 4.856, 3.0 ]
+#anchor_00003: [ 7.261, 0.000, 3.0 ]
+
+
+#注意浮点型要写为 1.0 不能只写 1 否则加载会出错
+kf_parameters:
+- {
+Q_scale: 0.1,                      #larger value reduces low pass effect on xyz
+R_scale: 10.0,  #40                #uwb measurement error scaling, i.e. measurement noise (10-50)
+acc_gauss_noise_sqrt: 0.6, # 0.9,  #acceleration gaussian noise  加速度测量噪声(重要) 设置不准确转弯的时候会出现较大偏差
+acc_bias_noise_sqrt: 0.009,  # 0.009,     #acceleration bias noise  加速度漂移(重要)
+z_damping_factor: 0.5,             #larger value produces heavier low pass effect on z, Q * z_damping_factor
+meas_dis_err: 0.15                  #uwb测距误差０.1m左右
+}
+
+##EKF位置初始化
+initial_position: [1.0, 1.0, 1.0 ]
+
+#后期改进需要根据运动速度进行动态调整
+#如果一直持续有残差，可能为基站掉线一段时间后重新上线，要处理
+distance_innovation_dynamic_threshold_parameters:
+- {
+initial_value: 0.3,    #0.3 #初始阈值
+min: 0.3,              #0.3 最小阈值，应该根据系统精度设置，设置大了去除效果变差，设置小了由于获取的数据量太少,稳定性变差，可能导致发散
+max: 2.0,              #2.0 最大阈值,设置大可避免滤波器可能无法继续更新情况但可能无法有效去除NLOS
+reduce_step: 0.01,
+increase_step: 0.1
+}
+
+
+#KEF状态观测
+kf_status_check_parameters:
+- {
+size_max: 50,         #用来判断状态点个数
+sd_threshold: 0.03
+}
+
+#--------------visualization-------------
+is_visualization_track: true
+visualization_track_marks_max:  2500 #5000
+
+linktrack_position_track_pub_topic_00: "linktrack_00/visualization_position_mark"
+linktrack_position_track_pub_topic_01: "linktrack_01/visualization_position_mark"
+
+uifp_position_track_pub_topic_00: "ekfout_00/visualization_position_mark"
+uifp_position_track_pub_topic_01: "ekfout_01/visualization_position_mark"
+
+uifp_position_track_pub_topic_fusion: "ekfout_fusion/visualization_position_mark"
+
+
+uifp_pose2d_pub_topic: "radar_coordinate/pose2d"
+
+
+
+
+
+
+
+
+
+
+
+
